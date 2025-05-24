@@ -36,7 +36,7 @@ Auto Exotic est le garage de référence sur le serveur GTA RP Wise FA, spécial
 
 ## 📞 Contact
 
-* Discord : [discord.gg/QasqrbMM](https://discord.gg/QasqrbMM)
+* Discord : [discord.gg/ZHVP2KGgN9](https://discord.gg/ZHVP2KGgN9)
 * Horaires : 7j/7 de 8h00 à 2h00, urgences 24h/24.
 * Localisation : Los Santos, serveur Wise FA.
 
