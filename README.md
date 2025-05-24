@@ -10,7 +10,8 @@ Auto Exotic est le garage de référence sur le serveur GTA RP Wise FA, spécial
 
 ## 📸 Aperçu
 
-![Aperçu du site Auto Exotic](https://autoexotic-website.netlify.app/assets/images/preview.jpg)
+![image](https://github.com/user-attachments/assets/abeb2e59-77ed-4214-b5e5-bbb50dcd799e)
+
 
 ## 🧰 Fonctionnalités
 
