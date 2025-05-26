@@ -51,3 +51,19 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d'i
 ---
 
 *Site officiel du garage Auto Exotic sur le serveur GTA RP Wise FA.*
+
+---
+
+## 📝 TODO (Roadmap technique)
+
+- [ ] **Réorganisation des fichiers** : déplacer images dans `/assets/img`, JS dans `/js`, CSS dans `/css` si possible.
+- [ ] **Ajouter/compléter les balises `<meta>` SEO et Open Graph** (og:title, og:description, og:image, etc.) dans chaque page.
+- [ ] **Accessibilité** : ajouter des balises ARIA, des rôles, et améliorer la navigation clavier.
+- [ ] **Sémantique HTML5** : remplacer les `<div>` par `<section>`, `<main>`, etc. là où c'est pertinent.
+- [ ] **Nettoyage CSS** : fusionner les doublons, supprimer les classes inutilisées, harmoniser les boutons et effets de hover.
+- [ ] **Responsivité mobile** : améliorer le responsive sur toutes les pages.
+- [ ] **Optimisation images** : lazy-loading, ajout des attributs width/height/alt, conversion WebP (script à créer).
+- [ ] **CI/CD** : ajouter un workflow GitHub Actions `.github/workflows/deploy.yml` pour build + déploiement Netlify.
+- [ ] **Audit Lighthouse CI** ou linter simple dans la CI.
+- [ ] **Sécurité** : ajouter un fichier `_headers` ou `netlify.toml` avec CSP, X-Frame-Options, X-Content-Type-Options.
+- [ ] **Fichiers de configuration** : ajouter `.editorconfig`, `.prettierrc`, `.eslintrc` pour la maintenance.
