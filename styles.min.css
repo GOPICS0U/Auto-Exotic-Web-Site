@@ -116,6 +116,11 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   background: #00d4ff;
   color: #222;
 }
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); border: 0;
+}
 /* Pour réduire les CSS inutilisés, utiliser PurgeCSS ou un outil équivalent lors du build */
 /* Politique de cache à configurer côté serveur/Netlify :
    Cache-Control: public, max-age=31536000, immutable pour ce fichier
