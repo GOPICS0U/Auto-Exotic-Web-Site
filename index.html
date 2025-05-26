@@ -1223,7 +1223,7 @@
             
             // Try to play a short engine rev sound
             try {
-                engineSound.src = 'https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3';
+                engineSound.src = '';
                 engineSound.play().catch(e => console.log('Audio autoplay prevented by browser'));
             } catch (e) {
                 console.log('Audio playback error');
