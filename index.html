@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Auto Exotic - Le garage de référence sur Wise FA pour tous vos besoins automobiles de luxe. Personnalisation, réparation et dépannage 24/7.">
-    <!-- SEO & Open Graph -->
-    <meta property="og:title" content="Auto Exotic - Wise FA | Rapide, Simple et Luxueux">
-    <meta property="og:description" content="Garage de référence sur Wise FA : personnalisation, réparation, dépannage 24/7, équipe passionnée.">
-    <meta property="og:image" content="https://autoexotic-website.netlify.app/assets/img/og-image.jpg">
-    <meta property="og:url" content="https://autoexotic-website.netlify.app/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>Auto Exotic - Wise FA | Rapide, Simple et Luxueux</title>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-THTFPX5Q');</script>
-    <!-- End Google Tag Manager -->
-    <link rel="shortcut icon" img="favicon.ico"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Auto Exotic : Location de voitures de luxe, sportives et exotiques. Découvrez notre flotte exclusive et réservez votre expérience.">
+  <meta name="keywords" content="location voiture luxe, voiture sportive, voiture exotique, location auto, Auto Exotic">
+  <meta name="robots" content="index, follow">
+  <title>Auto Exotic - Location de voitures de luxe et sportives</title>
+  <link rel="preload" href="styles.min.css" as="style">
+  <link rel="stylesheet" href="styles.min.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- SEO & Open Graph -->
+  <meta property="og:title" content="Auto Exotic - Wise FA | Rapide, Simple et Luxueux">
+  <meta property="og:description" content="Garage de référence sur Wise FA : personnalisation, réparation, dépannage 24/7, équipe passionnée.">
+  <meta property="og:image" content="https://autoexotic-website.netlify.app/assets/img/og-image.jpg">
+  <meta property="og:url" content="https://autoexotic-website.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-THTFPX5Q');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="shortcut icon" img="favicon.ico"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
         * {
             margin: 0;
             padding: 0;
@@ -910,6 +916,18 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        img, .testimonial-avatar {
+          max-width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        /* Ajout focus visible pour accessibilité */
+        a:focus, button:focus {
+          outline: 2px solid #00d4ff;
+          outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
@@ -1041,7 +1059,7 @@
                         </div>
                         <p class="testimonial-text">"Service exceptionnel ! Ma Zentorno a été complètement transformée avec une peinture personnalisée qui fait tourner toutes les têtes à Los Santos. L'équipe est professionnelle et attentive aux détails."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-avatar" loading="lazy" width="60" height="60">
                             <div>
                                 <h4>Alexandre M.</h4>
                                 <p>Client depuis 2 mois</p>
@@ -1058,7 +1076,7 @@
                         </div>
                         <p class="testimonial-text">"Dépannage ultra rapide en pleine nuit ! J'étais bloqué à Paleto Bay et en moins de 10 minutes, un technicien était sur place. Prix honnêtes et service impeccable, je recommande vivement."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="testimonial-avatar" loading="lazy" width="60" height="60">
                             <div>
                                 <h4>Sophie L.</h4>
                                 <p>Cliente satisfaite</p>
@@ -1075,7 +1093,7 @@
                         </div>
                         <p class="testimonial-text">"La qualité des modifications mécaniques est impressionnante. Ma voiture est désormais la plus rapide de ma bande. Le personnel est passionné et donne d'excellents conseils techniques."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="testimonial-avatar" loading="lazy" width="60" height="60">
                             <div>
                                 <h4>Thomas D.</h4>
                                 <p>Passionné d'automobiles</p>
@@ -1242,7 +1260,7 @@
             
             // Try to play a short engine rev sound
             try {
-                engineSound.src = 'https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3';
+                engineSound.src = '';
                 engineSound.play().catch(e => console.log('Audio autoplay prevented by browser'));
             } catch (e) {
                 console.log('Audio playback error');
@@ -1474,6 +1492,13 @@
                 navLinks.classList.remove('active');
             }
         });
+
+        // Lazy loading polyfill for images (for old browsers)
+        if ('loading' in HTMLImageElement.prototype === false) {
+            document.querySelectorAll('img[loading="lazy"]').forEach(function(img) {
+                if (img.dataset && img.dataset.src) img.src = img.dataset.src;
+            });
+        }
     </script>
 </body>
 </html>
