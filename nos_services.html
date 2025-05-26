@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez les services premium d'Auto Exotic - Personnalisation, réparation et dépannage de véhicules de luxe sur Wise FA.">
     <!-- SEO & Open Graph -->
     <meta property="og:title" content="Nos Services - Auto Exotic | Wise FA">
@@ -101,7 +101,7 @@
             transform: translateY(-2px);
         }
 
-        button.mobile-menu {
+        .mobile-menu {
             display: none;
             flex-direction: column;
             cursor: pointer;
@@ -111,7 +111,7 @@
             z-index: 1001;
         }
 
-        button.mobile-menu span {
+        .mobile-menu span {
             width: 100%;
             height: 3px;
             background: white;
@@ -122,29 +122,29 @@
             position: absolute;
         }
         
-        button.mobile-menu span:nth-child(1) {
+        .mobile-menu span:nth-child(1) {
             top: 0;
         }
         
-        button.mobile-menu span:nth-child(2) {
+        .mobile-menu span:nth-child(2) {
             top: 10px;
         }
         
-        button.mobile-menu span:nth-child(3) {
+        .mobile-menu span:nth-child(3) {
             top: 20px;
         }
         
-        button.mobile-menu.active span:nth-child(1) {
+        .mobile-menu.active span:nth-child(1) {
             transform: rotate(45deg);
             top: 10px;
             background: #00d4ff;
         }
         
-        button.mobile-menu.active span:nth-child(2) {
+        .mobile-menu.active span:nth-child(2) {
             opacity: 0;
         }
         
-        button.mobile-menu.active span:nth-child(3) {
+        .mobile-menu.active span:nth-child(3) {
             transform: rotate(-45deg);
             top: 10px;
             background: #00d4ff;
@@ -748,7 +748,7 @@
             <a href="index.html" class="logo" aria-label="Accueil Auto Exotic">
                 <i class="fas fa-car" aria-hidden="true"></i> AUTO EXOTIC
             </a>
-            <ul class="nav-links" id="navLinks" role="menubar" aria-label="Menu principal">
+            <ul class="nav-links" id="navLinks" role="menubar">
                 <li><a href="index.html" role="menuitem">Accueil</a></li>
                 <li><a href="nos_services.html" class="active" role="menuitem">Services</a></li>
                 <li><a href="equipe.html" role="menuitem">Équipe</a></li>
@@ -759,11 +759,11 @@
             <a href="https://discord.gg/QasqrbMM" target="_blank" class="discord-btn" aria-label="Rejoindre le Discord Auto Exotic">
                 <i class="fab fa-discord" aria-hidden="true"></i> Discord
             </a>
-            <button class="mobile-menu" aria-label="Menu mobile" tabindex="0" aria-haspopup="true" aria-controls="navLinks" onclick="toggleNav()">
+            <div class="mobile-menu" onclick="toggleNav()" aria-label="Menu mobile" tabindex="0" role="button">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </div>
         </nav>
     </header>
 
