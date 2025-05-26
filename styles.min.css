@@ -73,7 +73,8 @@ a:focus,a:hover{outline:2px solid #005fcc;}
     grid-template-columns:1fr!important;
     gap:1.5rem;
   }
-  .feature-card,.stat-item,.service-card,.testimonial-card,.team-member,.event-card,.value-card{
+  .feature-card, .stat-item, .service-card, .testimonial-card, .team-member, .event-card, .value-card{
+    will-change: transform, opacity;
     padding:1.2rem!important;
     font-size:1rem;
   }
@@ -94,11 +95,11 @@ a:focus,a:hover{outline:2px solid #005fcc;}
   .footer-section{padding:0;}
 }
 /* Focus visible renforcé */
-a:focus,button:focus,.btn:focus{
-  outline:2.5px solid #00d4ff;
-  outline-offset:2px;
-  background:#222!important;
-  color:#fff!important;
+a:focus-visible, button:focus-visible, .btn:focus-visible {
+  outline: 2.5px solid #00d4ff;
+  outline-offset: 2px;
+  background: #222 !important;
+  color: #fff !important;
 }
 .btn, .btn-primary, .btn-secondary {
   /* ...existing code... */
@@ -115,4 +116,7 @@ a:focus,button:focus,.btn:focus{
   background: #00d4ff;
   color: #222;
 }
-/* ...existing code, minifié... */
+/* Pour réduire les CSS inutilisés, utiliser PurgeCSS ou un outil équivalent lors du build */
+/* Politique de cache à configurer côté serveur/Netlify :
+   Cache-Control: public, max-age=31536000, immutable pour ce fichier
+*/

@@ -1,2 +1,6 @@
-# Redirection vers la racine sans slash final
-/*/index.html  /:splat  301!
+# Politique de cache efficace pour les assets statiques
+/assets/*  /assets/:splat  200
+/assets/*  /assets/:splat  200!  Cache-Control: public, max-age=31536000, immutable
+
+# Supprime toute redirection globale qui pourrait causer des boucles
+# (exemple à NE PAS utiliser : /*/index.html  /:splat  301!)
