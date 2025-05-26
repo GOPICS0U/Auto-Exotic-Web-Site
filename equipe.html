@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez l'équipe passionnée d'Auto Exotic - Des professionnels dévoués à l'excellence automobile sur Wise FA.">
     <title>Notre Équipe - Auto Exotic | Wise FA</title>
     <link rel="shortcut icon" img="favicon.ico"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,10 +16,16 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
             color: white;
             line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
         }
 
         /* Header */
@@ -83,14 +91,49 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            width: 30px;
+            height: 25px;
+            position: relative;
+            z-index: 1001;
         }
 
         .mobile-menu span {
-            width: 25px;
+            width: 100%;
             height: 3px;
             background: white;
             margin: 3px 0;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+            display: block;
+            position: absolute;
+        }
+        
+        .mobile-menu span:nth-child(1) {
+            top: 0;
+        }
+        
+        .mobile-menu span:nth-child(2) {
+            top: 10px;
+        }
+        
+        .mobile-menu span:nth-child(3) {
+            top: 20px;
+        }
+        
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 10px;
+            background: #00d4ff;
+        }
+        
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 10px;
+            background: #00d4ff;
         }
 
         /* Main Content */

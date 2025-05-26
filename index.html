@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Auto Exotic - Le garage de référence sur Wise FA pour tous vos besoins automobiles de luxe. Personnalisation, réparation et dépannage 24/7.">
     <title>Auto Exotic - Wise FA | Rapide, Simple et Luxueux</title>
     <link rel="shortcut icon" img="favicon.ico"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,10 +16,16 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
             color: white;
             line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
         }
 
         /* Loading Animation */
@@ -27,33 +35,97 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease;
+            transition: all 0.8s ease;
         }
 
         .loader.hidden {
             opacity: 0;
             pointer-events: none;
+            transform: translateY(-20px);
         }
 
         .loader-content {
             text-align: center;
-            animation: pulse 2s infinite;
+            position: relative;
+        }
+        
+        .loader::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0,212,255,0.1) 0%, rgba(0,0,0,0) 70%);
         }
 
         .loader-logo {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             color: #00d4ff;
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+        }
+        
+        .loader-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 10px;
+            background: radial-gradient(ellipse at center, rgba(0,212,255,0.3) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            animation: shadow 3s ease-in-out infinite;
+        }
+        
+        .loader h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #00d4ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .loader p {
+            color: #ffffff;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .loader p::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+            animation: loading 2s infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes shadow {
+            0%, 100% { opacity: 0.3; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.1; transform: translateX(-50%) scale(0.8); }
+        }
+        
+        @keyframes loading {
+            0% { width: 0; left: 0; }
+            50% { width: 100%; }
+            100% { width: 0; left: 100%; }
         }
 
         /* Header */
@@ -118,14 +190,49 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            width: 30px;
+            height: 25px;
+            position: relative;
+            z-index: 1001;
         }
 
         .mobile-menu span {
-            width: 25px;
+            width: 100%;
             height: 3px;
             background: white;
             margin: 3px 0;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+            display: block;
+            position: absolute;
+        }
+        
+        .mobile-menu span:nth-child(1) {
+            top: 0;
+        }
+        
+        .mobile-menu span:nth-child(2) {
+            top: 10px;
+        }
+        
+        .mobile-menu span:nth-child(3) {
+            top: 20px;
+        }
+        
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 10px;
+            background: #00d4ff;
+        }
+        
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 10px;
+            background: #00d4ff;
         }
 
         /* Hero Section */
@@ -133,12 +240,31 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23000" width="1200" height="600"/><circle fill="%2300d4ff" cx="300" cy="150" r="50" opacity="0.1"/><circle fill="%2300d4ff" cx="900" cy="400" r="80" opacity="0.1"/><rect fill="%23ffffff" x="100" y="250" width="200" height="100" opacity="0.05"/><rect fill="%23ffffff" x="800" y="100" width="150" height="200" opacity="0.05"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Effet parallaxe */
             text-align: center;
             padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, rgba(0,0,0,0) 70%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
@@ -146,6 +272,12 @@
             margin: 0 auto;
         }
 
+        .hero-content > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
         .hero-content h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
@@ -153,7 +285,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: slideInUp 1s ease-out;
         }
 
         .hero-content .slogan {
@@ -161,13 +292,11 @@
             margin-bottom: 2rem;
             color: #00d4ff;
             font-style: italic;
-            animation: slideInUp 1s ease-out 0.2s both;
         }
 
         .hero-content p {
             font-size: 1.3rem;
             margin-bottom: 3rem;
-            animation: slideInUp 1s ease-out 0.4s both;
         }
 
         .cta-buttons {
@@ -175,7 +304,6 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: slideInUp 1s ease-out 0.6s both;
         }
 
         .btn {
@@ -210,6 +338,32 @@
         .features {
             padding: 5rem 2rem;
             background: rgba(255,255,255,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .features::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0,212,255,0.05) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
         }
 
         .features-container {
@@ -268,6 +422,28 @@
         .stats {
             padding: 4rem 2rem;
             background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(0,153,204,0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            filter: blur(8px);
+            z-index: 0;
+        }
+        
+        .stats-container {
+            position: relative;
+            z-index: 1;
         }
 
         .stats-container {
@@ -375,25 +551,276 @@
             }
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonials-slider {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 100%;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0,212,255,0.2);
+            margin: 0 1rem;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-rating {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            border: 2px solid #00d4ff;
+        }
+        
+        .testimonial-author h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            color: #00d4ff;
+        }
+        
+        .testimonial-author p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-btn {
+            background: rgba(0,212,255,0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-btn:hover {
+            background: #00d4ff;
+            color: black;
+        }
+        
+        .testimonial-dots {
+            display: flex;
+            margin: 0 1rem;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #00d4ff;
+            transform: scale(1.2);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 2rem;
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .faq-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0,212,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: white;
+            margin: 0;
+        }
+        
+        .faq-question i {
+            color: #00d4ff;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .faq-item.active .faq-question {
+            background: rgba(0,212,255,0.1);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #00d4ff;
+            color: #0f1419;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 0;
                 left: 0;
                 width: 100%;
-                background: rgba(15, 20, 25, 0.95);
+                height: 100vh;
+                background: rgba(15, 20, 25, 0.98);
                 flex-direction: column;
-                padding: 1rem;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                padding: 2rem;
+                gap: 1.5rem;
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
             }
 
             .nav-links.active {
                 display: flex;
             }
+            
+            .nav-links a {
+                font-size: 1.3rem;
+            }
 
             .mobile-menu {
                 display: flex;
+                z-index: 1001;
+            }
+            
+            .discord-btn {
+                position: relative;
+                z-index: 1001;
             }
 
             .hero-content h1 {
@@ -407,14 +834,66 @@
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
             }
 
-            .features {
+            .features, .stats, .testimonials, .faq {
                 padding: 3rem 1rem;
             }
-
-            .stats {
-                padding: 3rem 1rem;
+            
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+            
+            .testimonial-avatar {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .feature-card i {
+                font-size: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -527,7 +1006,126 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="testimonials-container">
+                <h2>Ce que disent nos clients</h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Service exceptionnel ! Ma Zentorno a été complètement transformée avec une peinture personnalisée qui fait tourner toutes les têtes à Los Santos. L'équipe est professionnelle et attentive aux détails."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-avatar">
+                            <div>
+                                <h4>Alexandre M.</h4>
+                                <p>Client depuis 2 mois</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Dépannage ultra rapide en pleine nuit ! J'étais bloqué à Paleto Bay et en moins de 10 minutes, un technicien était sur place. Prix honnêtes et service impeccable, je recommande vivement."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="testimonial-avatar">
+                            <div>
+                                <h4>Sophie L.</h4>
+                                <p>Cliente satisfaite</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"La qualité des modifications mécaniques est impressionnante. Ma voiture est désormais la plus rapide de ma bande. Le personnel est passionné et donne d'excellents conseils techniques."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="testimonial-avatar">
+                            <div>
+                                <h4>Thomas D.</h4>
+                                <p>Passionné d'automobiles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" onclick="changeTestimonial(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="dot active" onclick="currentTestimonial(0)"></span>
+                        <span class="dot" onclick="currentTestimonial(1)"></span>
+                        <span class="dot" onclick="currentTestimonial(2)"></span>
+                    </div>
+                    <button class="testimonial-btn next" onclick="changeTestimonial(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="faq-container">
+                <h2>Questions fréquentes</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Quels sont vos horaires d'ouverture ?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Nous sommes ouverts 7 jours sur 7, de 8h00 à 02h00. Notre service de dépannage est disponible 24h/24 et 7j/7 pour les urgences.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Comment prendre rendez-vous pour une personnalisation ?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Vous pouvez prendre rendez-vous directement sur notre Discord ou en contactant l'un de nos mécaniciens. Pour les projets complexes, nous recommandons une consultation préalable.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Proposez-vous des services de dépannage ?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Oui, nous offrons un service de dépannage premium 24h/24 et 7j/7 partout sur Los Santos. Appelez notre numéro d'urgence et un technicien sera à vos côtés dans les plus brefs délais.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Quels types de personnalisations proposez-vous ?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Nous proposons une gamme complète de personnalisations : peintures exclusives, modifications mécaniques, améliorations de performance, intérieurs sur mesure, systèmes audio haut de gamme, et bien plus encore.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <!-- Footer -->
     <footer>
@@ -580,18 +1178,60 @@
     </footer>
 
     <script>
-        // Loading screen
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-                playEngineSound();
-            }, 2000);
+        // Loading screen with progress simulation
+        document.addEventListener('DOMContentLoaded', function() {
+            const loader = document.getElementById('loader');
+            const loadingText = loader.querySelector('p');
+            const originalText = loadingText.textContent;
+            let progress = 0;
+            
+            // Simulate loading progress
+            const loadingInterval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                
+                loadingText.textContent = `${originalText} ${Math.floor(progress)}%`;
+                
+                if (progress === 100) {
+                    clearInterval(loadingInterval);
+                    
+                    // Show complete message
+                    loadingText.textContent = 'Chargement terminé!';
+                    
+                    // Hide loader after a short delay
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                        playEngineSound();
+                        
+                        // Trigger entrance animations for hero content
+                        document.querySelectorAll('.hero-content > *').forEach((el, index) => {
+                            setTimeout(() => {
+                                el.style.opacity = '1';
+                                el.style.transform = 'translateY(0)';
+                            }, 300 + (index * 200));
+                        });
+                    }, 800);
+                }
+            }, 150);
         });
 
         // Engine sound simulation
         function playEngineSound() {
+            // Create audio element for engine sound
+            const engineSound = new Audio();
+            engineSound.volume = 0.2;
+            
+            // Try to play a short engine rev sound
+            try {
+                engineSound.src = 'https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3';
+                engineSound.play().catch(e => console.log('Audio autoplay prevented by browser'));
+            } catch (e) {
+                console.log('Audio playback error');
+            }
+            
+            // Fallback to vibration if audio fails
             if (navigator.vibrate) {
-                navigator.vibrate([100, 50, 100, 50, 200]);
+                navigator.vibrate([100, 50, 150, 50, 200]);
             }
         }
 
@@ -623,7 +1263,7 @@
             });
         });
 
-        // Animation on scroll
+        // Animation on scroll - Enhanced version
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -632,13 +1272,47 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animation = 'slideInUp 0.8s ease-out forwards';
+                    // Add a slight delay based on the element's position
+                    const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 150;
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, delay);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .stat-item').forEach(el => {
-            observer.observe(el);
+        // Apply initial styles to animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.feature-card, .stat-item, .testimonial-card, .faq-item');
+            
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.8s ease-out';
+                observer.observe(el);
+            });
+            
+            // Add parallax effect to sections
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                
+                // Parallax for hero section
+                const heroSection = document.querySelector('.hero');
+                if (heroSection) {
+                    heroSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+                }
+                
+                // Subtle movement for background elements instead of feature cards
+                const parallaxBgs = document.querySelectorAll('.features::before, .features::after, .stats::before');
+                parallaxBgs.forEach((bg, index) => {
+                    const speed = 0.05 + (index * 0.02);
+                    const yPos = scrollPosition * speed;
+                    if (bg) {
+                        bg.style.transform = `translateY(${yPos}px)`;
+                    }
+                });
+            });
         });
 
         // Console welcome message
@@ -653,6 +1327,134 @@
         
         "Rapide, Simple et Luxueux"
         `);
+        
+        // Testimonials Slider - Enhanced version
+        document.addEventListener('DOMContentLoaded', () => {
+            let testimonialIndex = 0;
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (testimonials.length === 0 || dots.length === 0) return;
+            
+            // Apply initial styles
+            testimonials.forEach((testimonial, index) => {
+                if (index !== 0) {
+                    testimonial.style.display = 'none';
+                }
+                testimonial.style.opacity = '0';
+                testimonial.style.transform = 'translateX(50px)';
+                testimonial.style.transition = 'all 0.5s ease-out';
+                
+                // Add delay for initial animation
+                setTimeout(() => {
+                    if (index === 0) {
+                        testimonial.style.opacity = '1';
+                        testimonial.style.transform = 'translateX(0)';
+                    }
+                }, 1000);
+            });
+            
+            // Activate first dot
+            if (dots.length > 0) {
+                dots[0].classList.add('active');
+            }
+            
+            window.showTestimonial = function(n) {
+                // Hide all testimonials
+                testimonials.forEach(testimonial => {
+                    testimonial.style.display = 'none';
+                    testimonial.style.opacity = '0';
+                    testimonial.style.transform = 'translateX(50px)';
+                });
+                
+                // Remove active class from all dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Show the current testimonial with animation
+                testimonials[n].style.display = 'block';
+                
+                // Trigger reflow to ensure animation works
+                void testimonials[n].offsetWidth;
+                
+                // Apply animation
+                setTimeout(() => {
+                    testimonials[n].style.opacity = '1';
+                    testimonials[n].style.transform = 'translateX(0)';
+                }, 50);
+                
+                // Activate corresponding dot
+                dots[n].classList.add('active');
+            };
+            
+            window.changeTestimonial = function(step) {
+                testimonialIndex += step;
+                
+                // Loop back to the beginning if at the end
+                if (testimonialIndex >= testimonials.length) {
+                    testimonialIndex = 0;
+                }
+                
+                // Loop to the end if at the beginning
+                if (testimonialIndex < 0) {
+                    testimonialIndex = testimonials.length - 1;
+                }
+                
+                window.showTestimonial(testimonialIndex);
+            };
+            
+            window.currentTestimonial = function(n) {
+                testimonialIndex = n;
+                window.showTestimonial(testimonialIndex);
+            };
+        });
+        
+        // Auto-advance testimonials every 5 seconds
+        setInterval(() => {
+            changeTestimonial(1);
+        }, 5000);
+        
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Improved mobile menu
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
