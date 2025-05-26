@@ -1,0 +1,44 @@
+{
+  "name": "auto-exotic-website",
+  "version": "1.0.0",
+  "description": "Site web du garage Auto Exotic sur le serveur GTA RP Wise FA.",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "cssnano styles.css styles.min.css",
+    "build:js": "terser main.js -o main.min.js",
+    "build:images": "imagemin assets/img/* --plugin=webp --out-dir=assets/img/",
+    "build:sitemap": "node scripts/generate-sitemap.js",
+    "build": "npm run build:css && npm run build:js && npm run build:images && npm run build:sitemap"
+  },
+  "devDependencies": {
+    "cssnano": "^5.1.15",
+    "terser": "^5.19.2",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^7.0.0",
+    "sitemap": "^7.1.1"
+  },
+  "author": "Votre Nom",
+  "license": "MIT",
+  "homepage": "https://autoexotic-website.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/votre-utilisateur/auto-exotic-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/votre-utilisateur/auto-exotic-website/issues"
+  },
+  "keywords": [
+    "GTA RP",
+    "Wise FA",
+    "Auto Exotic",
+    "personnalisation",
+    "vehicules de luxe",
+    "depannage",
+    "entretien"
+  ],
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "nodemon": "^2.0.7"
+  }
+}

@@ -1,2 +1,5 @@
 # Redirection vers la racine sans slash final
 /*/index.html  /:splat  301!
+
+# Force canonical URLs (Netlify)
+https://autoexotic-website.netlify.app/*  https://autoexotic-website.netlify.app/:splat  301!

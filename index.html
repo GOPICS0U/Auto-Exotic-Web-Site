@@ -950,9 +950,30 @@
           outline: 2px solid #00d4ff;
           outline-offset: 2px;
         }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00d4ff;
+            color: #0f1419;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: top 0.3s ease;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 10px;
+        }
     </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THTFPX5Q"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -986,16 +1007,13 @@
             <a href="https://discord.gg/ZHVP2KGgN9" target="_blank" class="discord-btn" aria-label="Rejoindre le Discord Auto Exotic">
                 <i class="fab fa-discord" aria-hidden="true"></i> Discord
             </a>
-            <button class="mobile-menu" aria-label="Menu mobile" tabindex="0" aria-haspopup="true" aria-controls="navLinks">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="mobile-menu" aria-label="Menu mobile" aria-controls="navLinks" aria-expanded="false" tabindex="0">
+                <span></span><span></span><span></span>
             </button>
         </nav>
     </header>
-
-    <!-- Hero Section -->
-    <main>
+    <main id="main-content" tabindex="-1">
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <h1>AUTO EXOTIC</h1>
@@ -1187,7 +1205,7 @@
     </button>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>AUTO EXOTIC</h3>
@@ -1235,7 +1253,7 @@
             </p>
         </div>
     </footer>
-
+    <script src="main.[hash].js" defer></script>
     <script>
         // Loading screen with progress simulation
         document.addEventListener('DOMContentLoaded', function() {
@@ -1522,6 +1540,6 @@
             });
         }
     </script>
-    <script src="main.min.js" defer></script>
+    <script src="main.[hash].js" defer></script>
 </body>
 </html>
