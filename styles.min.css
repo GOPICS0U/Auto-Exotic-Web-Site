@@ -2,21 +2,6 @@
 body{font-family:sans-serif;margin:0;padding:0;background:#fff;color:#222;}
 img{max-width:100%;height:auto;display:block;}
 a:focus,a:hover{outline:2px solid #005fcc;}
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 8px;
-  background: #00d4ff;
-  color: #111;
-  padding: 8px 16px;
-  z-index: 3000;
-  border-radius: 6px;
-  font-weight: bold;
-}
-.skip-link:focus {
-  left: 16px;
-  outline: 2px solid #005fcc;
-}
 @font-face {
   font-family: 'Montserrat';
   src: url('/assets/fonts/Montserrat.woff2') format('woff2');
@@ -95,17 +80,7 @@ a:focus,a:hover{outline:2px solid #005fcc;}
   .hero-content h1,.page-header h1{font-size:2rem;}
   .hero-content .slogan,.page-header p{font-size:1.1rem;}
   .footer-section{margin-bottom:1.5rem;}
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-  .footer-section a, .footer-section {
-    min-height: 44px;
-    font-size: 1.1rem;
-    padding: 0.7rem 0;
-  }
+  .footer-content{grid-template-columns:1fr;}
   .back-to-top{bottom:16px;right:16px;width:44px;height:44px;}
   img,iframe,video{max-width:100vw!important;height:auto!important;display:block;}
   .map-container{height:220px;}
@@ -119,11 +94,11 @@ a:focus,a:hover{outline:2px solid #005fcc;}
   .footer-section{padding:0;}
 }
 /* Focus visible renforcé */
-a:focus, button:focus, .btn:focus {
-  outline: 2.5px solid #00d4ff;
-  outline-offset: 2px;
-  background: #222 !important;
-  color: #fff !important;
+a:focus,button:focus,.btn:focus{
+  outline:2.5px solid #00d4ff;
+  outline-offset:2px;
+  background:#222!important;
+  color:#fff!important;
 }
 .btn, .btn-primary, .btn-secondary {
   /* ...existing code... */

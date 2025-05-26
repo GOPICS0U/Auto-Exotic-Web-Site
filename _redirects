@@ -1,12 +1,2 @@
 # Redirection vers la racine sans slash final
 /*/index.html  /:splat  301!
-
-# Supprime ou corrige la règle de redirection qui boucle
-
-# ...supprime la ligne suivante si elle existe...
-# https://autoexotic-website.netlify.app/*  https://autoexotic-website.netlify.app/:splat  301!
-
-# Si tu veux forcer le HTTPS ou le domaine principal, utilise plutôt :
-# /*  /index.html  200
-
-# Ou laisse le fichier _redirects vide si tu n’as pas besoin de redirections personnalisées.
