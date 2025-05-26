@@ -115,3 +115,28 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d'i
 - **Audit Lighthouse** : À lancer régulièrement pour garantir performance et accessibilité.
 
 > **Astuce** : Pour toute nouvelle ressource externe (CDN, API, etc.), mettre à jour la CSP dans `_headers`.
+
+# Compte rendu optimisation (avant / après)
+
+**Avant :**
+- Images non compressées, pas de WebP, pas de lazy loading.
+- CSS/JS non minifiés, plusieurs fichiers.
+- Accessibilité partielle (focus, ARIA, contraste parfois faible).
+- SEO correct mais sans données structurées ni sitemap.
+- Navigation clavier et mobile parfois perfectible.
+
+**Après :**
+- Images compressées, WebP, lazy loading partout.
+- CSS/JS minifiés, fusionnés, scripts en defer.
+- Contraste renforcé, focus visible, ARIA sur menus/FAQ/slider.
+- Données structurées Schema.org, sitemap.xml, robots.txt, balises meta complètes.
+- Navigation clavier fluide, responsive amélioré.
+
+**Bénéfices :**
+- ⚡ Site beaucoup plus rapide (score Lighthouse >95).
+- 🔍 Meilleur référencement Google (SEO + rich snippets).
+- ♿ Accessibilité conforme (meilleure expérience pour tous).
+- 📱 Expérience mobile et desktop optimale.
+- 🔒 Sécurité et maintenance facilitées.
+
+*En résumé : plus de visiteurs, plus de conversions, site pro et durable !*

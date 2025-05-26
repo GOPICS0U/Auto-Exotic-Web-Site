@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Auto Exotic - Location de voitures de luxe et sportives</title>
   <meta name="description" content="Auto Exotic : Location de voitures de luxe, sportives et exotiques. Découvrez notre flotte exclusive et réservez votre expérience.">
   <meta name="keywords" content="location voiture luxe, voiture sportive, voiture exotique, location auto, Auto Exotic">
   <meta name="robots" content="index, follow">
-  <title>Auto Exotic - Location de voitures de luxe et sportives</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="styles.min.css" as="style">
@@ -30,6 +30,26 @@
   <link rel="shortcut icon" img="favicon.ico"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Auto Exotic",
+    "url": "https://autoexotic-website.netlify.app/",
+    "logo": "https://autoexotic-website.netlify.app/assets/img/og-image.jpg",
+    "description": "Garage de référence sur Wise FA : personnalisation, réparation, dépannage 24/7, équipe passionnée.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Los Santos",
+      "addressRegion": "Wise FA"
+    },
+    "openingHours": "Mo-Su 08:00-02:00",
+    "telephone": "911",
+    "sameAs": [
+      "https://discord.gg/ZHVP2KGgN9"
+    ]
+  }
+  </script>
   <style>
         * {
             margin: 0;
@@ -955,7 +975,7 @@
             <a href="index.html" class="logo" aria-label="Accueil Auto Exotic">
                 <i class="fas fa-car" aria-hidden="true"></i> AUTO EXOTIC
             </a>
-            <ul class="nav-links" id="navLinks" role="menubar">
+            <ul class="nav-links" id="navLinks" role="menubar" aria-label="Menu principal">
                 <li><a href="index.html" role="menuitem">Accueil</a></li>
                 <li><a href="nos_services.html" role="menuitem">Services</a></li>
                 <li><a href="equipe.html" role="menuitem">Équipe</a></li>
@@ -1047,72 +1067,72 @@
         </section>
         
         <!-- Testimonials Section -->
-        <section class="testimonials">
-            <div class="testimonials-container">
-                <h2>Ce que disent nos clients</h2>
-                <div class="testimonials-slider">
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Service exceptionnel ! Ma Zentorno a été complètement transformée avec une peinture personnalisée qui fait tourner toutes les têtes à Los Santos. L'équipe est professionnelle et attentive aux détails."</p>
-                        <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-avatar" loading="lazy" width="60" height="60">
-                            <div>
-                                <h4>Alexandre M.</h4>
-                                <p>Client depuis 2 mois</p>
-                            </div>
-                        </div>
+        <section class="testimonials" aria-label="Témoignages clients">
+          <div class="testimonials-container">
+            <h2>Ce que disent nos clients</h2>
+            <div class="testimonials-slider" role="region" aria-roledescription="carousel" aria-label="Avis clients">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Dépannage ultra rapide en pleine nuit ! J'étais bloqué à Paleto Bay et en moins de 10 minutes, un technicien était sur place. Prix honnêtes et service impeccable, je recommande vivement."</p>
-                        <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="testimonial-avatar" loading="lazy" width="60" height="60">
-                            <div>
-                                <h4>Sophie L.</h4>
-                                <p>Cliente satisfaite</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="testimonial-text">"La qualité des modifications mécaniques est impressionnante. Ma voiture est désormais la plus rapide de ma bande. Le personnel est passionné et donne d'excellents conseils techniques."</p>
-                        <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="testimonial-avatar" loading="lazy" width="60" height="60">
-                            <div>
-                                <h4>Thomas D.</h4>
-                                <p>Passionné d'automobiles</p>
-                            </div>
+                    <p class="testimonial-text">"Service exceptionnel ! Ma Zentorno a été complètement transformée avec une peinture personnalisée qui fait tourner toutes les têtes à Los Santos. L'équipe est professionnelle et attentive aux détails."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-avatar" loading="lazy" width="60" height="60">
+                        <div>
+                            <h4>Alexandre M.</h4>
+                            <p>Client depuis 2 mois</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-controls">
-                    <button class="testimonial-btn prev" onclick="changeTestimonial(-1)"><i class="fas fa-chevron-left"></i></button>
-                    <div class="testimonial-dots">
-                        <span class="dot active" onclick="currentTestimonial(0)"></span>
-                        <span class="dot" onclick="currentTestimonial(1)"></span>
-                        <span class="dot" onclick="currentTestimonial(2)"></span>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <button class="testimonial-btn next" onclick="changeTestimonial(1)"><i class="fas fa-chevron-right"></i></button>
+                    <p class="testimonial-text">"Dépannage ultra rapide en pleine nuit ! J'étais bloqué à Paleto Bay et en moins de 10 minutes, un technicien était sur place. Prix honnêtes et service impeccable, je recommande vivement."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="testimonial-avatar" loading="lazy" width="60" height="60">
+                        <div>
+                            <h4>Sophie L.</h4>
+                            <p>Cliente satisfaite</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"La qualité des modifications mécaniques est impressionnante. Ma voiture est désormais la plus rapide de ma bande. Le personnel est passionné et donne d'excellents conseils techniques."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="testimonial-avatar" loading="lazy" width="60" height="60">
+                        <div>
+                            <h4>Thomas D.</h4>
+                            <p>Passionné d'automobiles</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="testimonial-controls" aria-label="Contrôles du carrousel">
+                <button class="testimonial-btn prev" onclick="changeTestimonial(-1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active" onclick="currentTestimonial(0)"></span>
+                    <span class="dot" onclick="currentTestimonial(1)"></span>
+                    <span class="dot" onclick="currentTestimonial(2)"></span>
+                </div>
+                <button class="testimonial-btn next" onclick="changeTestimonial(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
         </section>
         
         <!-- FAQ Section -->
@@ -1502,5 +1522,6 @@
             });
         }
     </script>
+    <script src="main.min.js" defer></script>
 </body>
 </html>

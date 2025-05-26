@@ -1,0 +1,2 @@
+# Redirection vers la racine sans slash final
+/*/index.html  /:splat  301!
