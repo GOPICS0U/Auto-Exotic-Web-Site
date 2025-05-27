@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <!-- Correction meta viewport : suppression de user-scalable=no pour permettre le zoom -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Auto Exotic - Location de voitures de luxe et sportives</title>
   <meta name="description" content="Auto Exotic : Location de voitures de luxe, sportives et exotiques. Découvrez notre flotte exclusive et réservez votre expérience.">
@@ -10,6 +11,10 @@
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Ajout preload sur police critique et image LCP -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="https://autoexotic-website.netlify.app/assets/img/og-image.jpg" as="image">
+  <!-- Déplacement du CSS principal en preload + defer du JS -->
   <link rel="preload" href="styles.min.css" as="style">
   <link rel="stylesheet" href="styles.min.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -947,12 +952,58 @@
 
         /* Ajout focus visible pour accessibilité */
         a:focus, button:focus {
-          outline: 2px solid #00d4ff;
+          outline: 2.5px solid #00d4ff;
           outline-offset: 2px;
+          background: #222!important;
+          color: #fff!important;
+        }
+
+        /* Correction animation : transition uniquement sur transform/opacity */
+        .feature-card, .stat-item, .testimonial-card, .faq-item {
+          will-change: transform, opacity;
+          transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1);
+        }
+
+        /* Correction CLS : hauteur min sur .hero-content et .hero */
+        .hero { min-height: 100vh; }
+        .hero-content { min-height: 320px; }
+
+        /* Correction skip-link pour accessibilité */
+        .skip-link {
+          position: absolute;
+          left: -999px;
+          top: auto;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          z-index: 3000;
+          background: #00d4ff;
+          color: #111;
+          padding: 0.8rem 1.2rem;
+          border-radius: 0 0 8px 8px;
+          font-weight: bold;
+          transition: left 0.2s;
+        }
+        .skip-link:focus {
+          left: 10px;
+          top: 10px;
+          width: auto;
+          height: auto;
+          outline: 2px solid #005fcc;
+        }
+
+        /* Correction lazy loading fade-in */
+        img[loading="lazy"] {
+          opacity: 0;
+          transition: opacity 0.4s;
+        }
+        img[loading="lazy"].loaded {
+          opacity: 1;
         }
     </style>
 </head>
 <body>
+    <!-- Ajout skip link pour accessibilité clavier -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THTFPX5Q"
@@ -1237,6 +1288,8 @@
         </div>
     </footer>
 
+    <!-- Correction : defer du JS principal -->
+    <script src="main.min.js" defer></script>
     <script>
         // Loading screen with progress simulation
         document.addEventListener('DOMContentLoaded', function() {
@@ -1536,6 +1589,5 @@
             });
         });
     </script>
-    <script src="main.min.js" defer></script>
 </body>
 </html>

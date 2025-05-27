@@ -7,7 +7,7 @@ a:focus,a:hover{outline:2px solid #005fcc;}
   src: url('/assets/fonts/Montserrat.woff2') format('woff2');
   font-display: swap;
 }
-/* Skip link styles */
+/* Skip link styles pour accessibilité clavier */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -30,7 +30,7 @@ a:focus,a:hover{outline:2px solid #005fcc;}
   height: auto;
   outline: 2px solid #005fcc;
 }
-/* Animation compositing only transform/opacity */
+/* Animation compositing only transform/opacity pour meilleures perfs */
 .feature-card,
 .stat-item,
 .service-card,
@@ -43,7 +43,7 @@ a:focus,a:hover{outline:2px solid #005fcc;}
   will-change: transform, opacity;
   transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1);
 }
-/* img lazy loading */
+/* img lazy loading fade-in */
 img[loading="lazy"] {
   opacity: 0;
   transition: opacity 0.4s;
@@ -137,7 +137,7 @@ img[loading="lazy"].loaded {
   .footer-content{padding:0;}
   .footer-section{padding:0;}
 }
-/* Focus visible renforcé */
+/* Focus visible renforcé pour accessibilité */
 a:focus,button:focus,.btn:focus{
   outline:2.5px solid #00d4ff;
   outline-offset:2px;
