@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- Correction : suppression de user-scalable="no" pour accessibilité/zoom -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Auto Exotic - Location de voitures de luxe et sportives</title>
   <meta name="description" content="Auto Exotic : Location de voitures de luxe, sportives et exotiques. Découvrez notre flotte exclusive et réservez votre expérience.">
@@ -17,6 +17,8 @@
   <!-- Preload CSS principal, puis chargement asynchrone JS -->
   <link rel="preload" href="styles.min.css" as="style">
   <link rel="stylesheet" href="styles.min.css">
+  <link rel="stylesheet" href="mobile-optimizations.css">
+  <link rel="stylesheet" href="back-to-top.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <!-- SEO & Open Graph -->
   <meta property="og:title" content="Auto Exotic - Wise FA | Rapide, Simple et Luxueux">
@@ -1023,6 +1025,7 @@
     </div>
 
     <!-- Header -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <header>
         <nav aria-label="Navigation principale">
             <a href="index.html" class="logo" aria-label="Accueil Auto Exotic">
@@ -1598,5 +1601,7 @@
             });
         });
     </script>
+    <!-- Améliorations mobiles -->
+    <script src="mobile-enhancements.js" defer></script>
 </body>
 </html>

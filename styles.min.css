@@ -145,11 +145,11 @@ img[loading="lazy"].loaded {
   .footer-section{padding:0;}
 }
 /* Focus visible renforcé pour accessibilité */
-a:focus,button:focus,.btn:focus{
-  outline:2.5px solid #00d4ff;
-  outline-offset:2px;
-  background:#222!important;
-  color:#fff!important;
+a:focus, button:focus, .btn:focus {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  background: #222 !important;
+  color: #fff !important;
 }
 .btn, .btn-primary, .btn-secondary {
   /* ...existing code... */
@@ -166,4 +166,26 @@ a:focus,button:focus,.btn:focus{
   background: #00d4ff;
   color: #222;
 }
+[data-animate] {
+  opacity: 0;  background: rgba(255,255,255,0.08);
+
+
+
+
+
+
+
+
+
+/* ...existing code, minifié... */  transform: none;  opacity: 1;[data-animate].visible {}  transition: all 0.7s cubic-bezier(.4,0,.2,1);  transform: translateY(40px);  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.18);
+}
 /* ...existing code, minifié... */
+:root {
+  --color-accent: #00d4ff;
+  --color-bg: #0f1419;
+  --color-card: rgba(255,255,255,0.05);
+  --radius: 18px;
+}

@@ -1,0 +1,318 @@
+/* 
+ * Auto Exotic - Optimisations mobiles
+ * Ce fichier contient les améliorations CSS pour l'expérience mobile
+ */
+
+/* Variables globales */
+:root {
+  --color-primary: #00d4ff;
+  --color-secondary: #0099cc;
+  --color-background: #0f1419;
+  --color-background-alt: #1a2332;
+  --color-text: #ffffff;
+  --color-text-muted: #cccccc;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --border-radius-sm: 10px;
+  --border-radius-md: 15px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 30px;
+}
+
+/* Améliorations globales */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Skip link pour accessibilité */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 3000;
+  background: var(--color-primary);
+  color: var(--color-background);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+  font-weight: bold;
+  transition: left 0.2s;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  outline: 3px solid var(--color-secondary);
+}
+
+/* Optimisations pour les images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.4s;
+  min-height: 60px;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* Optimisations pour les boutons */
+.btn, .btn-primary, .btn-secondary {
+  min-height: 48px; /* Taille minimale pour les cibles tactiles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-xl);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Optimisations pour le header et la navigation */
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+}
+
+.mobile-menu {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 212, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: var(--spacing-sm);
+}
+
+/* Optimisations pour le menu mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 20, 25, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    gap: var(--spacing-lg);
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a {
+    font-size: 1.3rem;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    min-width: 180px;
+    text-align: center;
+    display: block;
+  }
+
+  .nav-links a:active,
+  .nav-links a:focus {
+    background: rgba(0, 212, 255, 0.1);
+  }
+
+  /* Amélioration du bouton mobile */
+  .mobile-menu {
+    display: flex;
+    z-index: 2100;
+  }
+
+  .mobile-menu:active,
+  .mobile-menu:focus {
+    background: rgba(0, 212, 255, 0.18);
+  }
+
+  /* Ajustements pour les sections principales */
+  main {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Ajustements pour les titres */
+  .page-header h1,
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .page-header p,
+  .hero-content .slogan {
+    font-size: 1.1rem;
+  }
+
+  /* Ajustements pour les grilles */
+  .features-grid,
+  .services-grid,
+  .team-grid,
+  .testimonial-grid,
+  .gallery-grid,
+  .stats-grid,
+  .values-grid,
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-md);
+  }
+
+  /* Ajustements pour les cartes */
+  .feature-card,
+  .service-card,
+  .team-member,
+  .testimonial-card,
+  .event-card,
+  .value-card,
+  .job-card,
+  .faq-item {
+    padding: var(--spacing-md) !important;
+  }
+
+  /* Ajustements pour les boutons */
+  .btn, .btn-primary, .btn-secondary {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  /* Ajustements pour les formulaires */
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .form-control {
+    padding: var(--spacing-sm);
+    font-size: 16px; /* Évite le zoom sur iOS */
+  }
+
+  /* Ajustements pour le footer */
+  footer {
+    padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-sm);
+  }
+
+  .footer-section {
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* Ajustements pour les sections spécifiques */
+  .contact-content,
+  .recruitment-content {
+    grid-template-columns: 1fr !important;
+  }
+
+  .map-container {
+    height: 220px;
+  }
+}
+
+/* Optimisations pour les très petits écrans */
+@media (max-width: 480px) {
+  html, body {
+    font-size: 15px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .page-header h1,
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .page-header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .services-grid,
+  .features-grid,
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ajustements pour les sections avec padding */
+  .special-services,
+  .testimonials,
+  .cta-section,
+  .values-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  /* Réduction des marges entre les sections */
+  .features,
+  .services,
+  .testimonials,
+  .team-section,
+  .cta-section,
+  .faq-section,
+  .contact-content,
+  .recruitment-content {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Optimisations pour l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimisations pour le mode sombre */
+@media (prefers-color-scheme: dark) {
+  .btn-primary:focus,
+  .btn-secondary:focus,
+  a:focus {
+    outline: 3px solid #ffffff;
+  }
+}
+
+/* Optimisations pour le mode contraste élevé */
+@media (forced-colors: active) {
+  .btn-primary,
+  .btn-secondary,
+  .mobile-menu,
+  .nav-links a {
+    border: 2px solid currentColor;
+  }
+}

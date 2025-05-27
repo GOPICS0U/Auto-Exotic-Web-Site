@@ -1,0 +1,66 @@
+/* 
+ * Auto Exotic - Bouton Retour en haut
+ * Ce fichier contient les styles pour le bouton "Retour en haut"
+ */
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #00d4ff, #0099cc);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  background: #00d4ff;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.back-to-top i {
+  font-size: 1.2rem;
+}
+
+/* Optimisations pour mobile */
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Optimisations pour l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
+}
+
+/* Optimisations pour le mode contraste élevé */
+@media (forced-colors: active) {
+  .back-to-top {
+    border: 2px solid currentColor;
+  }
+}
