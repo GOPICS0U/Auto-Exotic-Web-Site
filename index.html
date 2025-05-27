@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <!-- Correction meta viewport : suppression de user-scalable=no pour permettre le zoom -->
+  <!-- Correction : suppression de user-scalable="no" pour accessibilité/zoom -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Auto Exotic - Location de voitures de luxe et sportives</title>
@@ -11,10 +11,10 @@
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Ajout preload sur police critique et image LCP -->
+  <!-- Preload police critique et image LCP pour FCP/LCP -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
   <link rel="preload" href="https://autoexotic-website.netlify.app/assets/img/og-image.jpg" as="image">
-  <!-- Déplacement du CSS principal en preload + defer du JS -->
+  <!-- Preload CSS principal, puis chargement asynchrone JS -->
   <link rel="preload" href="styles.min.css" as="style">
   <link rel="stylesheet" href="styles.min.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -965,6 +965,7 @@
         }
 
         /* Correction CLS : hauteur min sur .hero-content et .hero */
+        .loader { min-height: 320px; }
         .hero { min-height: 100vh; }
         .hero-content { min-height: 320px; }
 
@@ -1003,7 +1004,7 @@
     </style>
 </head>
 <body>
-    <!-- Ajout skip link pour accessibilité clavier -->
+    <!-- Skip link pour accessibilité clavier -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THTFPX5Q"
@@ -1249,7 +1250,7 @@
             <div class="footer-section">
                 <h3>Navigation</h3>
                 <a href="index.html">Accueil</a>
-                <a href="services.html">Nos Services</a>
+                <a href="nos_services.html">Nos Services</a>
                 <a href="equipe.html">Notre Équipe</a>
                 <a href="recrutement.html">Recrutement</a>
                 <a href="galerie.html">Galerie</a>
@@ -1586,6 +1587,14 @@
                         img.classList.add('loaded');
                     });
                 }
+            });
+        });
+
+        // Correction lazy loading images: ajouter width/height et loading="lazy"
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img[loading="lazy"]').forEach(function(img) {
+                if (!img.hasAttribute('width')) img.setAttribute('width', img.naturalWidth || 60);
+                if (!img.hasAttribute('height')) img.setAttribute('height', img.naturalHeight || 60);
             });
         });
     </script>
