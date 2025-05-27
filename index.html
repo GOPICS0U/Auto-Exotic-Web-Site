@@ -953,16 +953,17 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THTFPX5Q"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Loading Screen -->
-    <div class="loader" id="loader">
+    <div class="loader" id="loader" role="status" aria-live="polite">
         <div class="loader-content">
             <div class="loader-logo">
-                <i class="fas fa-car"></i>
+                <i class="fas fa-car" aria-hidden="true"></i>
             </div>
             <h2>AUTO EXOTIC</h2>
             <p>Chargement en cours...</p>
@@ -971,17 +972,17 @@
 
     <!-- Header -->
     <header>
-        <nav role="navigation" aria-label="Navigation principale">
+        <nav aria-label="Navigation principale">
             <a href="index.html" class="logo" aria-label="Accueil Auto Exotic">
                 <i class="fas fa-car" aria-hidden="true"></i> AUTO EXOTIC
             </a>
-            <ul class="nav-links" id="navLinks" role="menubar" aria-label="Menu principal">
-                <li><a href="index.html" role="menuitem">Accueil</a></li>
-                <li><a href="nos_services.html" role="menuitem">Services</a></li>
-                <li><a href="equipe.html" role="menuitem">Équipe</a></li>
-                <li><a href="recrutement.html" role="menuitem">Recrutement</a></li>
-                <li><a href="galerie.html" role="menuitem">Galerie</a></li>
-                <li><a href="contact.html" role="menuitem">Contact</a></li>
+            <ul class="nav-links" id="navLinks" aria-label="Menu principal">
+                <li><a href="index.html" aria-label="Accueil">Accueil</a></li>
+                <li><a href="nos_services.html" aria-label="Services">Services</a></li>
+                <li><a href="equipe.html" aria-label="Équipe">Équipe</a></li>
+                <li><a href="recrutement.html" aria-label="Recrutement">Recrutement</a></li>
+                <li><a href="galerie.html" aria-label="Galerie">Galerie</a></li>
+                <li><a href="contact.html" aria-label="Contact">Contact</a></li>
             </ul>
             <a href="https://discord.gg/ZHVP2KGgN9" target="_blank" class="discord-btn" aria-label="Rejoindre le Discord Auto Exotic">
                 <i class="fab fa-discord" aria-hidden="true"></i> Discord
@@ -995,18 +996,18 @@
     </header>
 
     <!-- Hero Section -->
-    <main>
-        <section class="hero">
+    <main id="main-content">
+        <section class="hero" aria-label="Présentation Auto Exotic">
             <div class="hero-content">
                 <h1>AUTO EXOTIC</h1>
                 <p class="slogan">« Rapide, Simple et Luxueux »</p>
                 <p>Le garage de référence sur Wise FA pour tous vos besoins automobiles. De la personnalisation haut de gamme au dépannage d'urgence, notre équipe passionnée vous accompagne 24/7 dans l'univers de l'automobile de luxe.</p>
                 <div class="cta-buttons">
-                    <a href="nos_services.html" class="btn btn-primary">
-                        <i class="fas fa-wrench"></i> Découvrir nos Services
+                    <a href="nos_services.html" class="btn btn-primary" aria-label="Découvrir nos Services">
+                        <i class="fas fa-wrench" aria-hidden="true"></i> Découvrir nos Services
                     </a>
-                    <a href="https://discord.gg/ZHVP2KGgN9" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-discord"></i> Rejoindre Discord
+                    <a href="https://discord.gg/ZHVP2KGgN9" target="_blank" class="btn btn-secondary" aria-label="Rejoindre Discord">
+                        <i class="fab fa-discord" aria-hidden="true"></i> Rejoindre Discord
                     </a>
                 </div>
             </div>
@@ -1070,67 +1071,67 @@
         <section class="testimonials" aria-label="Témoignages clients">
           <div class="testimonials-container">
             <h2>Ce que disent nos clients</h2>
-            <div class="testimonials-slider" role="region" aria-roledescription="carousel" aria-label="Avis clients">
+            <div class="testimonials-slider" aria-live="polite">
                 <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-rating" aria-label="5 étoiles">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
                     </div>
                     <p class="testimonial-text">"Service exceptionnel ! Ma Zentorno a été complètement transformée avec une peinture personnalisée qui fait tourner toutes les têtes à Los Santos. L'équipe est professionnelle et attentive aux détails."</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-avatar" loading="lazy" width="60" height="60">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait client Alexandre M." class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
-                            <h4>Alexandre M.</h4>
+                            <h3>Alexandre M.</h3>
                             <p>Client depuis 2 mois</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-rating" aria-label="5 étoiles">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
                     </div>
                     <p class="testimonial-text">"Dépannage ultra rapide en pleine nuit ! J'étais bloqué à Paleto Bay et en moins de 10 minutes, un technicien était sur place. Prix honnêtes et service impeccable, je recommande vivement."</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="testimonial-avatar" loading="lazy" width="60" height="60">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait cliente Sophie L." class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
-                            <h4>Sophie L.</h4>
+                            <h3>Sophie L.</h3>
                             <p>Cliente satisfaite</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                    <div class="testimonial-rating" aria-label="4.5 étoiles">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                     </div>
                     <p class="testimonial-text">"La qualité des modifications mécaniques est impressionnante. Ma voiture est désormais la plus rapide de ma bande. Le personnel est passionné et donne d'excellents conseils techniques."</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="testimonial-avatar" loading="lazy" width="60" height="60">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Portrait client Thomas D." class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
-                            <h4>Thomas D.</h4>
+                            <h3>Thomas D.</h3>
                             <p>Passionné d'automobiles</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="testimonial-controls" aria-label="Contrôles du carrousel">
-                <button class="testimonial-btn prev" onclick="changeTestimonial(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="testimonial-btn prev" onclick="changeTestimonial(-1)" aria-label="Témoignage précédent"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
                 <div class="testimonial-dots">
-                    <span class="dot active" onclick="currentTestimonial(0)"></span>
-                    <span class="dot" onclick="currentTestimonial(1)"></span>
-                    <span class="dot" onclick="currentTestimonial(2)"></span>
+                    <span class="dot active" onclick="currentTestimonial(0)" aria-label="Témoignage 1"></span>
+                    <span class="dot" onclick="currentTestimonial(1)" aria-label="Témoignage 2"></span>
+                    <span class="dot" onclick="currentTestimonial(2)" aria-label="Témoignage 3"></span>
                 </div>
-                <button class="testimonial-btn next" onclick="changeTestimonial(1)"><i class="fas fa-chevron-right"></i></button>
+                <button class="testimonial-btn next" onclick="changeTestimonial(1)" aria-label="Témoignage suivant"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
             </div>
           </div>
         </section>
@@ -1521,6 +1522,19 @@
                 if (img.dataset && img.dataset.src) img.src = img.dataset.src;
             });
         }
+
+        // Lazy loading images: add loaded class for fade-in
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img[loading="lazy"]').forEach(function(img) {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', function() {
+                        img.classList.add('loaded');
+                    });
+                }
+            });
+        });
     </script>
     <script src="main.min.js" defer></script>
 </body>

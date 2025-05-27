@@ -7,6 +7,50 @@ a:focus,a:hover{outline:2px solid #005fcc;}
   src: url('/assets/fonts/Montserrat.woff2') format('woff2');
   font-display: swap;
 }
+/* Skip link styles */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 3000;
+  background: #00d4ff;
+  color: #111;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: bold;
+  transition: left 0.2s;
+}
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  outline: 2px solid #005fcc;
+}
+/* Animation compositing only transform/opacity */
+.feature-card,
+.stat-item,
+.service-card,
+.testimonial-card,
+.team-member,
+.event-card,
+.value-card,
+.faq-item,
+.gallery-item {
+  will-change: transform, opacity;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1);
+}
+/* img lazy loading */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
 /* Responsive */
 @media (max-width: 768px){
   html,body{font-size:16px;}
@@ -62,7 +106,7 @@ a:focus,a:hover{outline:2px solid #005fcc;}
     font-size:1.1rem;
     min-height:48px;
     min-width:44px;
-    padding:1rem 1.5rem;
+    padding:1.2rem 1.5rem;
     border-radius:24px;
     margin-bottom:1rem;
     width:100%;
