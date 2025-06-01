@@ -564,7 +564,7 @@
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
-                <h1>Rejoignez notre équipe</h1>
+                <h1 id="recruit-title">Recrutement</h1>
                 <p>Vous êtes passionné par l'automobile de luxe et souhaitez intégrer une équipe dynamique ? Découvrez nos opportunités et postulez dès maintenant.</p>
             </div>
 
@@ -849,6 +849,22 @@
         document.querySelectorAll('.job-card, .application-form, .faq-item').forEach(el => {
             observer.observe(el);
         });
+
+        // Multilingue FR/EN (bascule simple)
+        const translations = {
+            fr: {
+                'recruit-title': 'Recrutement',
+            },
+            en: {
+                'recruit-title': 'Recruitment',
+            }
+        };
+        const langSelect = document.getElementById('lang-select');
+        function setLang(lang) {
+            document.getElementById('recruit-title').textContent = translations[lang]['recruit-title'];
+        }
+        langSelect.addEventListener('change', e => setLang(e.target.value));
+        setLang(langSelect.value);
     </script>
 </body>
 </html>
