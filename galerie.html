@@ -524,17 +524,8 @@
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
-                <h1 id="gallery-title">Galerie</h1>
+                <h1>Notre Galerie</h1>
                 <p>Découvrez nos plus belles réalisations et les véhicules de prestige qui passent entre nos mains.</p>
-            </div>
-
-            <!-- Sélecteur de langue -->
-            <div id="lang-switcher" style="margin-left: 1rem; display: flex; align-items: center;">
-                <label for="lang-select" class="sr-only">Langue</label>
-                <select id="lang-select" aria-label="Sélection de la langue" style="padding: 0.3rem 0.7rem; border-radius: 6px; border: 1px solid #00d4ff; background: #181f2a; color: #00d4ff; font-weight: 600;">
-                    <option value="fr">FR</option>
-                    <option value="en">EN</option>
-                </select>
             </div>
 
             <!-- Gallery Filters -->
@@ -896,22 +887,6 @@
                 if (img.dataset && img.dataset.src) img.src = img.dataset.src;
             });
         }
-
-        // Multilingue FR/EN (bascule simple)
-        const translations = {
-            fr: {
-                'gallery-title': 'Galerie',
-            },
-            en: {
-                'gallery-title': 'Gallery',
-            }
-        };
-        const langSelect = document.getElementById('lang-select');
-        function setLang(lang) {
-            document.getElementById('gallery-title').textContent = translations[lang]['gallery-title'];
-        }
-        langSelect.addEventListener('change', e => setLang(e.target.value));
-        setLang(langSelect.value);
     </script>
 </body>
 </html>

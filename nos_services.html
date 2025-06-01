@@ -775,7 +775,7 @@
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
-                <h1 id="services-title">Nos Services</h1>
+                <h1>Nos Services</h1>
                 <p>Découvrez l'ensemble des prestations proposées par Auto Exotic, le garage de référence sur Wise FA pour tous vos besoins automobiles de luxe.</p>
             </div>
 
@@ -1082,22 +1082,6 @@
                 if (img.dataset && img.dataset.src) img.src = img.dataset.src;
             });
         }
-
-        // Multilingue FR/EN (bascule simple)
-        const translations = {
-            fr: {
-                'services-title': 'Nos Services',
-            },
-            en: {
-                'services-title': 'Our Services',
-            }
-        };
-        const langSelect = document.getElementById('lang-select');
-        function setLang(lang) {
-            document.getElementById('services-title').textContent = translations[lang]['services-title'];
-        }
-        langSelect.addEventListener('change', e => setLang(e.target.value));
-        setLang(langSelect.value);
     </script>
     <!-- Améliorations mobiles -->
     <script src="mobile-enhancements.js" defer></script>

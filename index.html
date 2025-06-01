@@ -1031,14 +1031,6 @@
             <a href="index.html" class="logo" aria-label="Accueil Auto Exotic">
                 <i class="fas fa-car" aria-hidden="true"></i> AUTO EXOTIC
             </a>
-            <!-- Sélecteur de langue -->
-            <div id="lang-switcher" style="margin-left: 1rem; display: flex; align-items: center;">
-                <label for="lang-select" class="sr-only">Langue</label>
-                <select id="lang-select" aria-label="Sélection de la langue" style="padding: 0.3rem 0.7rem; border-radius: 6px; border: 1px solid #00d4ff; background: #181f2a; color: #00d4ff; font-weight: 600;">
-                    <option value="fr">FR</option>
-                    <option value="en">EN</option>
-                </select>
-            </div>
             <ul class="nav-links" id="navLinks" aria-label="Menu principal">
                 <li><a href="index.html" aria-label="Accueil">Accueil</a></li>
                 <li><a href="nos_services.html" aria-label="Services">Services</a></li>
@@ -1199,34 +1191,6 @@
           </div>
         </section>
         
-        <!-- Galerie dynamique -->
-        <section class="gallery" aria-label="Galerie photo/vidéo dynamique" style="padding: 4rem 2rem; background: rgba(0,0,0,0.2);">
-            <div class="gallery-container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                <h2 id="gallery-title">Galerie</h2>
-                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <figure>
-                        <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=600&q=80" alt="Voiture de sport rouge Auto Exotic" loading="lazy" width="400" height="260" style="border-radius: 12px; box-shadow: 0 4px 24px rgba(0,212,255,0.12);">
-                        <figcaption>Personnalisation sur-mesure</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80" alt="Atelier mécanique Auto Exotic" loading="lazy" width="400" height="260" style="border-radius: 12px; box-shadow: 0 4px 24px rgba(0,212,255,0.12);">
-                        <figcaption>Atelier mécanique</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=format&fit=crop&w=600&q=80" alt="Dépannage 24/7 Auto Exotic" loading="lazy" width="400" height="260" style="border-radius: 12px; box-shadow: 0 4px 24px rgba(0,212,255,0.12);">
-                        <figcaption>Dépannage 24/7</figcaption>
-                    </figure>
-                    <figure>
-                        <video controls width="400" height="260" style="border-radius: 12px; box-shadow: 0 4px 24px rgba(0,212,255,0.12); background: #111;">
-                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                            Vidéo de présentation Auto Exotic
-                        </video>
-                        <figcaption>Présentation vidéo</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-        
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1272,23 +1236,6 @@
             </div>
         </section>
     </main>
-
-    <!-- Formulaire de contact moderne et accessible -->
-    <section id="contact-section" aria-label="Contactez-nous" style="padding: 4rem 2rem; background: rgba(0,212,255,0.05);">
-        <div style="max-width: 600px; margin: 0 auto; background: rgba(0,0,0,0.3); border-radius: 16px; box-shadow: 0 4px 24px rgba(0,212,255,0.10); padding: 2.5rem;">
-            <h2 id="contact-title" style="color: #00d4ff; margin-bottom: 1.5rem;">Contactez-nous</h2>
-            <form id="contactForm" aria-label="Formulaire de contact" autocomplete="on" style="display: flex; flex-direction: column; gap: 1.2rem;">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" required aria-required="true" placeholder="Votre nom" style="padding: 0.7rem; border-radius: 6px; border: 1px solid #00d4ff;">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required aria-required="true" placeholder="Votre email" style="padding: 0.7rem; border-radius: 6px; border: 1px solid #00d4ff;">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required aria-required="true" placeholder="Votre message" rows="5" style="padding: 0.7rem; border-radius: 6px; border: 1px solid #00d4ff;"></textarea>
-                <button type="submit" style="background: linear-gradient(45deg, #00d4ff, #0099cc); color: white; border: none; border-radius: 8px; padding: 1rem; font-size: 1.1rem; font-weight: bold; cursor: pointer;">Envoyer</button>
-                <div id="formMsg" role="status" aria-live="polite" style="margin-top: 1rem; color: #00d4ff;"></div>
-            </form>
-        </div>
-    </section>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
@@ -1652,55 +1599,6 @@
                 if (!img.hasAttribute('width')) img.setAttribute('width', img.naturalWidth || 60);
                 if (!img.hasAttribute('height')) img.setAttribute('height', img.naturalHeight || 60);
             });
-        });
-
-        // Multilingue FR/EN (bascule simple)
-        const translations = {
-            fr: {
-                'gallery-title': 'Galerie',
-                'contact-title': 'Contactez-nous',
-                'name': 'Nom',
-                'email': 'Email',
-                'message': 'Message',
-                'Envoyer': 'Envoyer',
-                'form-success': 'Merci pour votre message ! Nous vous répondrons rapidement.',
-                'form-error': 'Erreur lors de l\'envoi. Veuillez réessayer.'
-            },
-            en: {
-                'gallery-title': 'Gallery',
-                'contact-title': 'Contact Us',
-                'name': 'Name',
-                'email': 'Email',
-                'message': 'Message',
-                'Envoyer': 'Send',
-                'form-success': 'Thank you for your message! We will get back to you soon.',
-                'form-error': 'Error sending. Please try again.'
-            }
-        };
-        const langSelect = document.getElementById('lang-select');
-        function setLang(lang) {
-            document.getElementById('gallery-title').textContent = translations[lang]['gallery-title'];
-            document.getElementById('contact-title').textContent = translations[lang]['contact-title'];
-            document.querySelector('label[for="name"]').textContent = translations[lang]['name'];
-            document.querySelector('label[for="email"]').textContent = translations[lang]['email'];
-            document.querySelector('label[for="message"]').textContent = translations[lang]['message'];
-            document.querySelector('#contactForm button[type="submit"]').textContent = translations[lang]['Envoyer'];
-        }
-        langSelect.addEventListener('change', e => setLang(e.target.value));
-        // Initialisation
-        setLang(langSelect.value);
-
-        // Formulaire de contact (simulation d'envoi)
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const lang = langSelect.value;
-            const formMsg = document.getElementById('formMsg');
-            formMsg.textContent = '...';
-            setTimeout(() => {
-                // Simule succès
-                formMsg.textContent = translations[lang]['form-success'];
-                document.getElementById('contactForm').reset();
-            }, 1200);
         });
     </script>
     <!-- Améliorations mobiles -->

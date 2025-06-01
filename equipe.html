@@ -531,7 +531,7 @@
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
-                <h1 id="team-title">Notre Équipe</h1>
+                <h1>Notre Équipe</h1>
                 <p>Découvrez les passionnés qui font d'Auto Exotic le garage de référence sur Wise FA.</p>
             </div>
 
@@ -769,22 +769,6 @@
                 if (img.dataset && img.dataset.src) img.src = img.dataset.src;
             });
         }
-
-        // Multilingue FR/EN (bascule simple)
-        const translations = {
-            fr: {
-                'team-title': 'Notre Équipe',
-            },
-            en: {
-                'team-title': 'Our Team',
-            }
-        };
-        const langSelect = document.getElementById('lang-select');
-        function setLang(lang) {
-            document.getElementById('team-title').textContent = translations[lang]['team-title'];
-        }
-        langSelect.addEventListener('change', e => setLang(e.target.value));
-        setLang(langSelect.value);
     </script>
 </body>
 </html>
